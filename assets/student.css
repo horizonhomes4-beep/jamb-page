@@ -1,0 +1,40 @@
+/* MathCloud Student Portal presentation layer.
+   This file intentionally contains presentation only; Firebase/auth/data logic remains in student.html. */
+:root{--student-blue:#2563eb;--student-purple:#7c3aed;--student-ink:#10213f;--student-muted:#61708a;--student-line:#dce6f3;--student-soft:#f5f9ff;--student-green:#16a34a}
+.student-page{background:linear-gradient(180deg,#f4f8ff 0%,#f8fbff 45%,#eef4fb 100%);color:var(--student-ink);min-height:100vh}
+.student-page .topbar{background:rgba(255,255,255,.94)!important;color:var(--student-ink);border-bottom:1px solid var(--student-line)!important;box-shadow:0 4px 20px rgba(25,55,95,.06);backdrop-filter:blur(14px)}
+.student-page .topbar .brand{color:var(--student-ink)}
+.student-page .topbar .brand small{color:var(--student-muted)}
+.student-page .sidebar{background:#fff!important;border-right:1px solid var(--student-line)!important;box-shadow:8px 0 30px rgba(25,55,95,.04)}
+.student-page .main{padding:26px;min-width:0}
+.student-page .card,.student-page .panel,.student-page .subject-block,.student-page .plan-card{background:#fff!important;color:var(--student-ink);border:1px solid var(--student-line)!important;border-radius:18px;box-shadow:0 10px 30px rgba(30,65,110,.07)}
+.student-page .muted{color:var(--student-muted)}
+.student-page .btn{border-radius:11px;font-weight:700;transition:.18s ease}
+.student-page .btn-primary{background:linear-gradient(135deg,var(--student-blue),var(--student-purple))!important;border:0!important;color:#fff!important;box-shadow:0 8px 18px rgba(37,99,235,.20)}
+.student-page .btn-primary:hover{transform:translateY(-1px);filter:brightness(1.04)}
+.student-page input,.student-page select,.student-page textarea{background:#fff!important;color:var(--student-ink)!important;border:1px solid #cfdaea!important;border-radius:11px}
+.student-page input:focus,.student-page select:focus,.student-page textarea:focus{border-color:#6b8fe8!important;box-shadow:0 0 0 3px rgba(37,99,235,.10)!important;outline:none}
+.student-page .subject-pill{background:#fff;border-color:#d7e2ef;color:#33445f;box-shadow:0 3px 10px rgba(25,55,95,.04)}
+.student-page .subject-pill.active{background:#eef4ff;border-color:#6b8fe8;color:#1d4ed8}
+.student-page .notes-search-card{background:#fff;border:1px solid var(--student-line);border-radius:20px;padding:22px;margin-bottom:18px;box-shadow:0 10px 28px rgba(30,65,110,.06)}
+.notes-search-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}
+.notes-search-heading h3{margin:4px 0 4px;font-size:21px;color:var(--student-ink)}
+.section-kicker{display:block;font-size:11px;letter-spacing:.12em;font-weight:800;color:#5272a8}
+.notes-count{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:999px;background:#f0fdf4;color:#15803d;font-size:12px;font-weight:800;white-space:nowrap}
+.notes-status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.12);flex:none}
+.topic-search-wrap{position:relative;margin-top:7px}.topic-search-wrap>span{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:20px;color:#71829b}.topic-search-wrap input{width:100%;padding-left:39px;min-height:44px}
+.topic-note-list{display:grid;gap:12px}
+.topic-note-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;background:#fff;border:1px solid var(--student-line);border-radius:17px;padding:17px 18px;box-shadow:0 7px 22px rgba(30,65,110,.05);transition:.18s ease}
+.topic-note-card:hover{transform:translateY(-1px);border-color:#b8cae4;box-shadow:0 12px 28px rgba(30,65,110,.09)}
+.topic-note-indicator{position:absolute;right:18px;top:12px;display:flex;align-items:center;gap:6px;font-size:10px;color:#15803d;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.topic-note-main{display:flex;align-items:center;gap:14px;padding-right:120px}.topic-note-icon{width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:#eef4ff;font-size:22px;box-shadow:inset 0 0 0 1px #d8e5fb}
+.topic-note-copy h3{margin:0 0 4px;font-size:16px;color:#13284a}.topic-note-copy p{margin:0;color:var(--student-muted);font-size:13px}
+.topic-read-btn{min-width:126px;min-height:43px;display:inline-flex;align-items:center;justify-content:center;gap:8px}.topic-read-btn span{font-size:17px}
+#mc-modal-box{background:#fff!important;color:var(--student-ink)!important;border:1px solid #dce6f3!important;border-radius:20px!important;box-shadow:0 28px 80px rgba(12,35,70,.25)!important;max-height:90vh;overflow:auto}
+#mc-modal-box .mc-modal-header{background:#f8fbff;border-bottom:1px solid var(--student-line)}
+.topic-note-modal{max-width:980px;margin:0 auto;padding:2px 4px 8px}
+.topic-note-modal-head{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:4px 0 16px;border-bottom:1px solid #e5edf7}.topic-note-modal-brand{display:flex;align-items:center;gap:10px}.topic-note-modal-brand img{width:38px;height:38px;border-radius:10px}.topic-note-modal-brand b,.topic-note-modal-brand span{display:block}.topic-note-modal-brand span{font-size:12px;color:var(--student-muted);margin-top:2px}.note-reading-indicator{display:inline-flex;align-items:center;gap:7px;background:#f0fdf4;color:#15803d;padding:7px 10px;border-radius:999px;font-size:11px;font-weight:800}
+.topic-note-title-row{padding:22px 0 8px}.topic-note-title-row h1{font-size:30px;line-height:1.2;margin:5px 0 0;color:#10213f}
+.topic-note-content{background:#fff;color:#243653;font-size:16px;line-height:1.8;padding:6px 2px 20px}.topic-note-content section{padding:18px 0;border-bottom:1px solid #e8eef6}.topic-note-content section:last-child{border-bottom:0}.topic-note-content h2{font-size:20px;line-height:1.35;color:#17345f;margin:0 0 10px}.topic-note-content h3{color:#1d4ed8}.topic-note-content p{margin:0 0 12px}.topic-note-content ul,.topic-note-content ol{padding-left:24px}.topic-note-content li{margin:5px 0}.topic-note-content table{width:100%;border-collapse:collapse;background:#fff}.topic-note-content th{background:#eef4ff;color:#17345f}.topic-note-content th,.topic-note-content td{padding:10px;border:1px solid #dbe5f1;text-align:left}.topic-note-content .formula-box{background:#f7faff;border:1px solid #d9e5f5;border-radius:10px;padding:12px;margin:8px 0;overflow:auto}.topic-note-content .diagram-box,.topic-note-content .graph-box{background:#f8fbff;border:1px solid #dbe5f1;border-radius:14px;padding:14px;margin:12px 0;overflow:auto}.topic-note-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid #e5edf7}.readaloud-btn{border:1px solid #cddbeb;background:#f4f8ff;color:#214a87;border-radius:10px;padding:9px 13px;font-weight:800;cursor:pointer}.readaloud-btn:hover{background:#eaf2ff}.note-tip{font-size:12px;color:var(--student-muted)}
+@media(max-width:800px){.student-page .main{padding:17px}.topic-note-card{grid-template-columns:1fr}.topic-note-main{padding-right:0}.topic-note-indicator{position:static;order:-1;justify-self:start}.topic-read-btn{width:100%}.topic-note-title-row h1{font-size:25px}.topic-note-tools{align-items:flex-start;flex-direction:column}.note-tip{line-height:1.5}.notes-search-heading{flex-direction:column;gap:10px}}
+@media(max-width:480px){.student-page .main{padding:12px}.notes-search-card{padding:16px}.topic-note-card{padding:15px}.topic-note-icon{width:40px;height:40px}.topic-note-copy h3{font-size:15px}#mc-modal-box{border-radius:16px!important;padding:15px!important;max-height:94vh}.topic-note-modal-head{align-items:flex-start;flex-direction:column}.note-reading-indicator{align-self:flex-start}}
